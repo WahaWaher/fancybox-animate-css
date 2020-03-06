@@ -1,6 +1,6 @@
 {
   "name": "fancybox-animate-css",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Plugin that allows you easily control open/close animation of FancyBox3 popups.",
   "repository": {
     "type": "git",

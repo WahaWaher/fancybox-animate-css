@@ -1,9 +1,9 @@
-jQuery Fancybox AnimateCSS Plugin <sup>1.0.0</sup>
+jQuery Fancybox AnimateCSS Plugin <sup>1.0.1</sup>
 -------
 Plugin that allows you easily control open/close animation of FancyBox3 popups.
 
 - Compatible with libraries of CSS animations such as: animate.css, magic.css, etc.
-- Added "onOpen.fb" and "onClose.fb" events
+- Added "open.fb" and "close.fb" events
 - Ability to edit/disable animation for any media type
 - Competent integration with basic animation options
 - Control via data-attributes of the modal html container (for inline media types)

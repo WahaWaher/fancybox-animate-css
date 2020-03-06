@@ -1,6 +1,6 @@
 /**
  * jQuery.fancybox.animateCSS
- * Version: 1.0.0
+ * Version: 1.0.1
  * Repo: https://github.com/WahaWaher/fancybox-animate-css
  * Author: Sergey Kravchenko
  * Contacts: wahawaher@gmail.com
@@ -55,7 +55,7 @@
   });
 
   /**
-   * Adds "onOpen" and "onClose" events
+   * Adds "open" and "close" events
    */
   $(document)
     .on('afterLoad.fb', function(e, inst, slide) {
