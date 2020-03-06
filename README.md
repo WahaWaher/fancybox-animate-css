@@ -11,7 +11,7 @@ Plugin that allows you easily control open/close animation of FancyBox3 popups.
 ## Install
 ```sh
 # NPM
-npm i @wahawaher/fancybox-animate-css @wahawaher/jquery-animate-css
+npm i fancybox-animate-css @wahawaher/jquery-animate-css
 ```
 ## Include
 ```html
@@ -27,7 +27,7 @@ npm i @wahawaher/fancybox-animate-css @wahawaher/jquery-animate-css
 <!-- jQuery AnimateCSS Plugin -->
 <script src="./node_modules/@wahawaher/jquery-animate-css/jquery.animate.css.min.js"></script>
 <!-- jQuery Fancybox AnimateCSS Plugin -->
-<script src="./node_modules/@wahawaher/fancybox-animate-css/jquery.fancybox.animate.css.js"></script>
+<script src="./node_modules/fancybox-animate-css/jquery.fancybox.animate.css.js"></script>
 ```
 ## Usage
 ### Set default animation options for all types (it's enough)
@@ -91,6 +91,16 @@ Short pattern: "\<animation-name\>:\<duration\>:\<delay\>:\<timing-func\>"
 </div>
 
 <button data-src="#popup" data-fancybox>Popup trigger...</button>
+```
+### Events
+```javascript
+$(document)
+  .on('onOpen.fb', function (e, inst, current) {
+    // Animation options for current instance: current.opts.animation
+  })
+  .on('onClose.fb', function (e, inst, current) {
+    // Animation options for current instance: current.opts.animation
+  });
 ```
 ## License (MIT)
 Copyright (c) 2020 Sergey Kravchenko
