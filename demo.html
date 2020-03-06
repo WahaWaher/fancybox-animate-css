@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jQuery Fancybox AnimateCSS</title>
+
+  <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap-grid.min.css">
+  <link rel="stylesheet" href="./node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="./node_modules/animate.css/animate.min.css">
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-4">
+
+        <h2>Inline Popup: Default options</h2>
+        <!-----------------------------
+          Inline Popup: Default options
+        ------------------------------->
+        <div id="inline-popup-defaults" style="display: none;">
+          <h2>Inline Popup: Default options</h2>
+          <p>...</p>
+        </div>
+
+        <button data-src="#inline-popup-defaults" data-fancybox>
+          Inline Popup (default options): trigger
+        </button>
+
+      </div>
+      <div class="col-4">
+
+        <h2>Inline Popup: Data options</h2>
+        <!-------------------------------------
+          Inline Popup: Data options
+        --------------------------------------->
+        <div id="inline-popup-data"
+          data-animation-open="fadeInDown:350::ease-in-out"
+          data-animation-close='{
+            "name": "fadeOutDown",
+            "duration": 350,
+            "delay": 0,
+            "ease": "cubic-bezier(0.68, -0.55, 0.265, 1.55)"
+          }' style="display: none;">
+          <h2>Inline Popup: Data options</h2>
+          <p>...</p>
+        </div>
+
+        <button data-src="#inline-popup-data" data-fancybox>
+          Inline Popup (data options): trigger
+        </button>
+
+      </div>
+      <div class="col-4">
+
+        <h2>Image Gallery: Disabled</h2>
+        <!-------------------------------------
+          Image Gallery: Default options
+        --------------------------------------->
+        <a data-fancybox="gallery" href="./img/01.jpg">
+          Image... 
+        </a>
+        <a data-fancybox="gallery" href="./img/02.jpg">
+          Image... 
+        </a>
+        <a data-fancybox="gallery" href="./img/01.jpg">
+          Image... 
+        </a>
+
+      </div>
+      <div class="col-4">
+
+        <h2>Dynamic gallery: Custom options</h2>
+        <!-------------------------------------
+          Dynamic gallery: Custom options
+        --------------------------------------->
+        <button id="gallery-dynamic">
+          Dynamic gallery (custom options): trigger
+        </button>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="./node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.js"></script>
+  <script src="./node_modules/@wahawaher/jquery-animate-css/jquery.animate.css.min.js"></script>
+  <!-- <script src="./jquery.fancybox.animate.css.js"></script> -->
+  <script src="./jquery.fancybox.animate.css.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      /**
+       * Default options for all media types
+       */
+      $.extend(true, $.fancybox.defaults, {
+        animation: {
+          open: {
+            name: 'fadeInLeft',
+            duration: 750
+          },
+          close: {
+            name: 'fadeOutRight',
+            duration: 750
+          },
+        }
+      });
+
+      /**
+       * Disabled or change option for media types
+       */
+      $(document).on('beforeLoad.fb', function (e, inst, current) {
+        // Disable animation for image type
+        // (will be used default fancybox animation)
+        if (current.type == 'image') {
+          // current.opts.animation = false;
+          // or define specific options for images
+          // $.extend(true, current.opts.animation, {
+          //   open: {
+          //     name: 'zoomIn',
+          //     duration: 250
+          //   },
+          //   close: {
+          //     name: 'zoomOut',
+          //     duration: 350
+          //   }
+          // });
+        }
+      });
+
+      /**
+       * Dinamic gallery
+       */
+      $('#gallery-dynamic').on('click', function () {
+        $.fancybox.open([
+          {
+            src: '<div>1</div>',
+            type: 'inline',
+          },
+          {
+            src: '<div>2</div>',
+            type: 'inline',
+          },
+          {
+            src: '<div>3</div>',
+            type: 'inline',
+          }
+        ], {
+          loop: true,
+          animation: {
+            open: {
+              name: 'shake',
+              duration: 350
+            },
+            close: {
+              name: 'zoomOut',
+              duration: 350
+            }
+          }
+        }, 1);
+      });
+
+      /**
+       * Events
+       */
+      // $(document).on('onOpen.fb', function (e, inst, current) {
+      //   console.log('onOpen', current.opts.animation)
+      // }).on('onClose.fb', function (e, inst, current) {
+      //   console.log('onClose', current.opts.animation)
+      // });
+
+    });
+  </script>
+</body>
+
+</html>

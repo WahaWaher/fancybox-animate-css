@@ -1,0 +1,25 @@
+{
+  "name": "fancybox-animate-css",
+  "version": "1.0.0",
+  "description": "Plugin that allows you easily control open/close animation of FancyBox3 popups.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/WahaWaher/fancybox-animate-css.git"
+  },
+  "keywords": [
+    "fancybox",
+    "jquery",
+    "animate",
+    "animate",
+    "css"
+  ],
+  "author": "WahaWaher",
+  "license": "MIT",
+  "devDependencies": {
+    "@fancyapps/fancybox": "^3.5.7",
+    "@wahawaher/jquery-animate-css": "^1.0.2",
+    "animate.css": "^3.7.2",
+    "bootstrap": "^4.4.1",
+    "jquery": "^3.4.1"
+  }
+}
