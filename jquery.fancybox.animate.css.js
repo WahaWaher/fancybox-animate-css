@@ -1,6 +1,6 @@
 /**
  * jQuery.fancybox.animateCSS
- * Version: 1.0.1
+ * Version: 1.0.2
  * Repo: https://github.com/WahaWaher/fancybox-animate-css
  * Author: Sergey Kravchenko
  * Contacts: wahawaher@gmail.com
@@ -108,7 +108,7 @@
           duration: open.duration,
           delay: open.delay,
           ease: open.ease,
-          start: close.start,
+          start: open.start,
           complete: open.complete
         });
     })
@@ -125,7 +125,7 @@
         clear: true,
         duration: close.duration,
         delay: close.delay,
-        ease: open.ease,
+        ease: close.ease,
         start: close.start,
         complete: function() {
           $(this).css('opacity', 0);
@@ -146,6 +146,7 @@
         options[prop] = /duration|delay/.test(prop) ? +array[key] : array[key];
       }
     });
+    
     return options;
   }
 });

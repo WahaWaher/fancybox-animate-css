@@ -1,4 +1,4 @@
-jQuery Fancybox AnimateCSS Plugin <sup>1.0.1</sup>
+jQuery Fancybox AnimateCSS Plugin <sup>1.0.2</sup>
 -------
 Plugin that allows you easily control open/close animation of FancyBox3 popups.
 
