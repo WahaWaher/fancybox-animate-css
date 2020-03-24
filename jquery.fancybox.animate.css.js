@@ -1,6 +1,6 @@
 /**
  * jQuery.fancybox.animateCSS
- * Version: 1.0.2
+ * Version: 1.0.3
  * Repo: https://github.com/WahaWaher/fancybox-animate-css
  * Author: Sergey Kravchenko
  * Contacts: wahawaher@gmail.com
